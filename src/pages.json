@@ -1,0 +1,54 @@
+{
+  "easycom": {
+    "^u-(.*)": "uview-ui/components/u-$1/u-$1.vue"
+  },
+  "pages": [
+    {
+      "path": "pages/index/index",
+      "style": {
+        "navigationBarTitleText": "首页"
+      }
+    }, {
+      "path": "pages/my/index",
+      "style": {
+        "navigationBarTitleText": "我的"
+      }
+    }
+  ],
+  "tabBar": {
+    "color": "#7a7e83",
+    "selectedColor": "#0faeff",
+    "backgroundColor": "#ffffff",
+    "list": [{
+      "pagePath": "pages/index/index",
+      "text": "首页",
+      "iconPath": "static/logo.png",
+      "selectedIconPath": "static/logo.png"
+    }, {
+      "pagePath": "pages/my/index",
+      "text": "我的",
+      "iconPath": "static/logo.png",
+      "selectedIconPath": "static/logo.png"
+    }]
+  },
+  "rightWindow": {
+    "path": "responsive/right-window.vue", // 指定 rightWindow 页面文件
+    "style": {
+      "width": "300px" // 页面宽度
+    },
+    "matchMedia": {
+      "minWidth": 768 //生效条件，当窗口宽度大于768px时显示
+    }
+  },
+  "sitemapLocation": "sitemap.json",
+  "globalStyle": {
+    "backgroundTextStyle": "light",
+    "navigationBarBackgroundColor": "#F8F8F8",
+    "backgroundColor": "#F8F8F8",
+    "navigationBarTitleText": "Weixin",
+    "navigationBarTextStyle": "black",
+    "enablePullDownRefresh": true,
+    "onReachBottomDistance": 60,
+    "usingComponents": {}
+  }
+}
