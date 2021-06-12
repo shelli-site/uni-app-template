@@ -47,8 +47,6 @@
     "backgroundColor": "#F8F8F8",
     "navigationBarTitleText": "Weixin",
     "navigationBarTextStyle": "black",
-    "enablePullDownRefresh": true,
-    "onReachBottomDistance": 60,
     "usingComponents": {}
   }
 }

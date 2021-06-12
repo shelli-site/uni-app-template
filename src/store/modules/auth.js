@@ -1,15 +1,15 @@
 const state = {
   hasLogin: false,
-  loginProvider: "",
+  loginProvider: '',
   openid: null,
   noMatchRightWindow: true,
   rightWinActive: '/pages/component/view/view',
-  access: []
+  access: [],
 }
 const mutations = {
   login(state, provider) {
-    state.hasLogin = true;
-    state.loginProvider = provider;
+    state.hasLogin = true
+    state.loginProvider = provider
   },
   logout(state) {
     state.hasLogin = false
@@ -25,12 +25,12 @@ const mutations = {
     state.rightWinActive = rightWinActive
   },
   setUniverifyLogin(state, payload) {
-    typeof payload !== 'boolean' ? payload = !!payload : '';
-    state.isUniverifyLogin = payload;
-  }
+    typeof payload !== 'boolean' ? payload = !!payload : ''
+    state.isUniverifyLogin = payload
+  },
 }
 const actions = {
-  getUserOpenId: async function ({commit, state}) {
+  async getUserOpenId({ commit, state }) {
     return await new Promise((resolve, reject) => {
       if (state.openid) {
         resolve(state.openid)
@@ -40,7 +40,7 @@ const actions = {
             commit('login')
             setTimeout(function () { // TODO 模拟异步请求服务器获取 openid
               const openid = '123456789'
-              console.log('uni.request mock openid[' + openid + ']');
+              console.log('uni.request mock openid[' + openid + ']')
               commit('setOpenid', openid)
               resolve(openid)
             }, 1000)
@@ -48,22 +48,21 @@ const actions = {
           fail: (err) => {
             console.log('uni.login 接口调用失败，将无法正常使用开放接口等服务', err)
             reject(err)
-          }
+          },
         })
       }
     })
   },
-  login: function ({commit}, loginForm) {
-
+  login({ commit }, loginForm) {
     return new Promise((resolve, reject) => {
       // TODO 登录
       console.log(uni.$u.post)
     })
-  }
+  },
 }
 export default {
   namespaced: true,
   state,
   mutations,
-  actions
+  actions,
 }
