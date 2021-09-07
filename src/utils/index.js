@@ -14,9 +14,9 @@ const install = Vue => {
   Vue.prototype.$us = {}
   Object.keys(modules).forEach(function (key) {
     Vue.prototype.$us[key] = modules[key]
-  });
+  })
 }
 
 export default {
-  install
+  install,
 }
