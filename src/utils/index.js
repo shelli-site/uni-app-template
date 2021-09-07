@@ -11,6 +11,7 @@ const install = Vue => {
   if (install.installed) return
   install.installed = true
   // 定义过滤器
+  Vue.prototype.$us = {}
   Object.keys(modules).forEach(function (key) {
     Vue.prototype.$us[key] = modules[key]
   });
